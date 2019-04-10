@@ -1,5 +1,10 @@
 Debug/
 smart-paging.txt
+.codelite
+.DS_Store
+*.mk
+*.project
+*.workspace
 
 # Prerequisites
 *.d
