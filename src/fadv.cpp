@@ -30,7 +30,7 @@ int fadv(std::string file_name)
 
 	ret = posix_fadvise(fd, 0, 0, POSIX_FADV_DONTNEED);
 	if (ret) {
-		std::cout << stderr << "fadvise returned " << ret << "errno=" << errno << std::endl;
+		std::cout << "fadvise returned " << ret << "errno=" << errno << std::endl;
 		return 1;
 	}
 	

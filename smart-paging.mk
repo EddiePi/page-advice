@@ -5,18 +5,18 @@
 ## Debug
 ProjectName            :=smart-paging
 ConfigurationName      :=Debug
-WorkspacePath          :=/Users/eddie/GitRepo/smart-paging
-ProjectPath            :=/Users/eddie/GitRepo/smart-paging
+WorkspacePath          :=/home/eddie/smart-paging
+ProjectPath            :=/home/eddie/smart-paging
 IntermediateDirectory  :=./Debug
 OutDir                 := $(IntermediateDirectory)
 CurrentFileName        :=
 CurrentFilePath        :=
 CurrentFileFullPath    :=
-User                   :=皮艾迪
-Date                   :=09/04/2019
-CodeLitePath           :="/Users/eddie/Library/Application Support/CodeLite"
+User                   :=
+Date                   :=04/09/19
+CodeLitePath           :=/home/eddie/.codelite
 LinkerName             :=/usr/bin/g++
-SharedObjectLinkerName :=/usr/bin/g++ -dynamiclib -fPIC
+SharedObjectLinkerName :=/usr/bin/g++ -shared -fPIC
 ObjectSuffix           :=.o
 DependSuffix           :=.o.d
 PreprocessSuffix       :=.i
@@ -59,8 +59,8 @@ AS       := /usr/bin/as
 ##
 ## User defined environment variables
 ##
-CodeLiteDir:=/Applications/codelite.app/Contents/SharedSupport/
-Objects0=$(IntermediateDirectory)/src_server.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_fadv.cpp$(ObjectSuffix) 
+CodeLiteDir:=/usr/share/codelite
+Objects0=$(IntermediateDirectory)/src_fadv.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_server.cpp$(ObjectSuffix) 
 
 
 
@@ -91,21 +91,21 @@ PreBuild:
 ##
 ## Objects
 ##
-$(IntermediateDirectory)/src_server.cpp$(ObjectSuffix): src/server.cpp $(IntermediateDirectory)/src_server.cpp$(DependSuffix)
-	$(CXX) $(IncludePCH) $(SourceSwitch) "/Users/eddie/GitRepo/smart-paging/src/server.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/src_server.cpp$(ObjectSuffix) $(IncludePath)
-$(IntermediateDirectory)/src_server.cpp$(DependSuffix): src/server.cpp
-	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/src_server.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/src_server.cpp$(DependSuffix) -MM src/server.cpp
-
-$(IntermediateDirectory)/src_server.cpp$(PreprocessSuffix): src/server.cpp
-	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/src_server.cpp$(PreprocessSuffix) src/server.cpp
-
 $(IntermediateDirectory)/src_fadv.cpp$(ObjectSuffix): src/fadv.cpp $(IntermediateDirectory)/src_fadv.cpp$(DependSuffix)
-	$(CXX) $(IncludePCH) $(SourceSwitch) "/Users/eddie/GitRepo/smart-paging/src/fadv.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/src_fadv.cpp$(ObjectSuffix) $(IncludePath)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "/home/eddie/smart-paging/src/fadv.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/src_fadv.cpp$(ObjectSuffix) $(IncludePath)
 $(IntermediateDirectory)/src_fadv.cpp$(DependSuffix): src/fadv.cpp
 	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/src_fadv.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/src_fadv.cpp$(DependSuffix) -MM src/fadv.cpp
 
 $(IntermediateDirectory)/src_fadv.cpp$(PreprocessSuffix): src/fadv.cpp
 	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/src_fadv.cpp$(PreprocessSuffix) src/fadv.cpp
+
+$(IntermediateDirectory)/src_server.cpp$(ObjectSuffix): src/server.cpp $(IntermediateDirectory)/src_server.cpp$(DependSuffix)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "/home/eddie/smart-paging/src/server.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/src_server.cpp$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/src_server.cpp$(DependSuffix): src/server.cpp
+	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/src_server.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/src_server.cpp$(DependSuffix) -MM src/server.cpp
+
+$(IntermediateDirectory)/src_server.cpp$(PreprocessSuffix): src/server.cpp
+	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/src_server.cpp$(PreprocessSuffix) src/server.cpp
 
 
 -include $(IntermediateDirectory)/*$(DependSuffix)

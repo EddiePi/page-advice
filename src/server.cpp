@@ -6,7 +6,7 @@
 
 int main(int argc, char **argv)
 {
-	std::string file_name = "/Users/eddie/GitRepo/smart-paging/smart-paging/smart-paging.txt";
+	std::string file_name = "/home/eddie/smart-paging/smart-paging.txt";
 	int ret = fadv(file_name.c_str());
 	return 0;
 }
